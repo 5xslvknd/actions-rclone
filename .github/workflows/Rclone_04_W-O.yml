@@ -1,4 +1,4 @@
-name: Rclone_05 W sync to O
+name: Rclone_04 W sync to O
 
 on:
   workflow_dispatch:
