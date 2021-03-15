@@ -1,4 +1,4 @@
-name: Rclone_02 P Sync to S
+name: Rclone_02 P Sync to H
 
 on:
   workflow_dispatch:
@@ -48,26 +48,26 @@ jobs:
           # 更改时区
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           
-          echo "开始同步【P_01】至【S_01】"
-          rclone sync P:/"01 电影" S:/"01 电影" -v
-          echo "【P_01】已同步至【S_01】"
+          echo "开始同步【P_01】至【H_01】"
+          rclone sync P:/"01 电影" H:/"01 电影" -v
+          echo "【P_01】已同步至【H_01】"
           
-          echo "开始同步【P_02】至【S_02】"
-          rclone sync P:/"02 剧集" S:/"02 剧集" -v
-          echo "【P_02】已同步至【S_02】"
+          echo "开始同步【P_02】至【H_02】"
+          rclone sync P:/"02 剧集" H:/"02 剧集" -v
+          echo "【P_02】已同步至【H_02】"
           
-          echo "开始同步【P_03】至【S_03】"
-          rclone sync P:/"03 音乐" S:/"03 音乐" -v
-          echo "【P_03】已同步至【S_03】"
+          echo "开始同步【P_03】至【H_03】"
+          rclone sync P:/"03 音乐" H:/"03 音乐" -v
+          echo "【P_03】已同步至【H_03】"
           
-          echo "开始同步【P_06】至【S_06】"
-          rclone sync P:/"06 UHD" S:/"06 UHD" -v
-          echo "【P_06】已同步至【S_06】"
+          echo "开始同步【P_06】至【H_06】"
+          rclone sync P:/"06 UHD" H:/"06 UHD" -v
+          echo "【P_06】已同步至【H_06】"
           
-          echo "开始同步【P_04】至【S_04】"
-          rclone sync P:/"04 感官" S:/"04 感官" -v
-          echo "【P_04】已同步至【S_04】"
+          echo "开始同步【P_04】至【H_04】"
+          rclone sync P:/"04 感官" H:/"04 感官" -v
+          echo "【P_04】已同步至【H_04】"
           
-          echo "开始同步【P_05】至【S_05】"
-          rclone sync P:/"05 听读" S:/"05 听读" -v
+          echo "开始同步【P_05】至【H_05】"
+          rclone sync P:/"05 听读" H:/"05 听读" -v
           echo "【P_05】已同步至【S_05】"
