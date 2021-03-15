@@ -6,7 +6,8 @@
 
 | 名称                      |          内容           |
 | ------------------------ | ----------------------- |
-| `GCLONE_CONFIG`          |   Rclone 配置                   |
+| `RCLONE_CONFIG`          |   Rclone 配置                   |
+| `GCLONE_CONFIG`          |   Gclone 配置                   |
 | `GCLONE_SA_DLURL`        |   service_account 文件下载地址   |
 | `GCLONE_PATCH`           |   同步目录                      |
 
