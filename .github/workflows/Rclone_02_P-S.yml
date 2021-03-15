@@ -1,0 +1,73 @@
+name: Rclone_02 P Sync to S
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 6 */2 * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: rclone-install
+        run: |
+          # 安装 rclone
+          curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip
+          unzip rclone-current-linux-amd64.zip
+          cd rclone-*-linux-amd64
+          sudo mv rclone /usr/bin
+          sudo chmod +x /usr/bin/rclone
+      - name: rclone-config
+        env:
+          RCLONE_CONFIG: ${{ secrets.RCLONE_CONFIG }}
+        run: |
+          # 写配置文件
+          mkdir -p ~/.config/rclone/
+          cat << EOF > ~/.config/rclone/rclone.conf
+          $RCLONE_CONFIG
+          EOF
+      - name: rclone-run
+        run: |
+          # Rclone-Run
+          # 延迟函数
+          delay()
+          {
+          random_time=$(($RANDOM % $1))
+          echo "等待 ${random_time} 分钟后开始同步"
+          for((i=1;i<=${random_time};i++));  
+          do
+          echo "倒计时 $[${random_time}-$i] 分钟"
+          sleep 1m
+          done
+          }
+          # 随机延迟0~15分钟后再进行操作,可自行设置时间
+          delay 1
+          # 更改时区
+          sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+          
+          echo "开始同步【P_01】至【S_01】"
+          rclone sync P:/"01 电影" S:/"01 电影" -v
+          echo "【P_01】已同步至【S_01】"
+          
+          echo "开始同步【P_02】至【S_02】"
+          rclone sync P:/"02 剧集" S:/"02 剧集" -v
+          echo "【P_02】已同步至【S_02】"
+          
+          echo "开始同步【P_03】至【S_03】"
+          rclone sync P:/"03 音乐" S:/"03 音乐" -v
+          echo "【P_03】已同步至【S_03】"
+          
+          echo "开始同步【P_06】至【S_06】"
+          rclone sync P:/"06 UHD" S:/"06 UHD" -v
+          echo "【P_06】已同步至【S_06】"
+          
+          echo "开始同步【P_04】至【S_04】"
+          rclone sync P:/"04 感官" S:/"04 感官" -v
+          echo "【P_04】已同步至【S_04】"
+          
+          echo "开始同步【P_05】至【S_05】"
+          rclone sync P:/"05 听读" S:/"05 听读" -v
+          echo "【P_05】已同步至【S_05】"
