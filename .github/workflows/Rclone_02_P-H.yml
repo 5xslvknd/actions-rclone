@@ -3,7 +3,7 @@ name: Rclone_02 P Sync to H
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 6 */2 * *
+    - cron: 0 7 */2 * *
 
 jobs:
   build:
