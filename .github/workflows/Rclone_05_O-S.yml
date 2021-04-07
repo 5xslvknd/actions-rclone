@@ -54,13 +54,13 @@ jobs:
           # rclone sync O:/"02 剧集" S:/"02 剧集" -v
           # echo "【O_02】已同步至【S_02】"
           
-          echo "开始同步【O_03】至【S_03】"
-          rclone sync O:/"03 音乐" S:/"03 音乐" -v
-          echo "【O_03】已同步至【S_03】"
+          # echo "开始同步【O_03】至【S_03】"
+          # rclone sync O:/"03 音乐" S:/"03 音乐" -v
+          # echo "【O_03】已同步至【S_03】"
           
-          # echo "开始同步【O_06】至【S_06】"
-          # rclone sync O:/"06 UHD" S:/"06 UHD" -v
-          # echo "【O_06】已同步至【S_06】"
+          echo "开始同步【O_06】至【S_06】"
+          rclone sync O:/"06 UHD" S:/"06 UHD" -v
+          echo "【O_06】已同步至【S_06】"
           
           # echo "开始同步【O_04】至【S_04】"
           # rclone sync O:/"04 感官" S:/"04 感官" -v
