@@ -46,17 +46,17 @@ jobs:
           # 更改时区
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           
-          echo "开始同步【O_01】至【S_01】"
-          rclone sync O:/"01 电影" S:/"01 电影" -v
-          echo "【O_01】已同步至【S_01】"
+          # echo "开始同步【O_01】至【S_01】"
+          # rclone sync O:/"01 电影" S:/"01 电影" -v
+          # echo "【O_01】已同步至【S_01】"
           
           # echo "开始同步【O_02】至【S_02】"
           # rclone sync O:/"02 剧集" S:/"02 剧集" -v
           # echo "【O_02】已同步至【S_02】"
           
-          # echo "开始同步【O_03】至【S_03】"
-          # rclone sync O:/"03 音乐" S:/"03 音乐" -v
-          # echo "【O_03】已同步至【S_03】"
+          echo "开始同步【O_03】至【S_03】"
+          rclone sync O:/"03 音乐" S:/"03 音乐" -v
+          echo "【O_03】已同步至【S_03】"
           
           # echo "开始同步【O_06】至【S_06】"
           # rclone sync O:/"06 UHD" S:/"06 UHD" -v
