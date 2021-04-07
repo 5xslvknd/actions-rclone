@@ -1,4 +1,4 @@
-name: 'workflows日志自动清理'
+name: 'Delete workflows log'
 
 on:
   schedule:
