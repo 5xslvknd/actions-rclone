@@ -34,7 +34,6 @@ jobs:
           cd ~
           wget -O sa.zip "$GCLONE_SA_DLURL"
           unzip sa.zip
-          ls
       - name: gclone config
         run: |
           # 写配置文件
