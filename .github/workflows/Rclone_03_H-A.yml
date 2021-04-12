@@ -10,6 +10,7 @@ jobs:
     env:
       GCLONE_CONFIG: ${{ secrets.GCLONE_CONFIG }}
       GCLONE_SA_DLURL: ${{ secrets.GCLONE_SA_DLURL }}
+      GCLONE_PATCH: ${{ secrets.GCLONE_PATCH }}
       GCLONE_PATCH_01: ${{ secrets.GCLONE_PATCH_01 }}
       GCLONE_PATCH_02: ${{ secrets.GCLONE_PATCH_02 }} 
       GCLONE_PATCH_03: ${{ secrets.GCLONE_PATCH_03 }} 
