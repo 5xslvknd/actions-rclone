@@ -59,13 +59,13 @@ jobs:
           # echo "【O_03】已同步至【S_03】"
           
           echo "开始同步【O_06】至【S_06】"
-          rclone sync P:/"06 UHD" S:/"06 UHD" -v
-          echo "【P_06】已同步至【S_06】"
+          rclone sync O:/"06 UHD" S:/"06 UHD" -v
+          echo "【O_06】已同步至【S_06】"
           
           # echo "开始同步【O_04】至【S_04】"
           # rclone sync O:/"04 感官" S:/"04 感官" -v
           # echo "【O_04】已同步至【S_04】"
           
-          # echo "开始同步【O_05】至【S_05】"
-          # rclone sync O:/"05 听读" S:/"05 听读" -v
-          # echo "【O_05】已同步至【S_05】"
+          echo "开始同步【O_05】至【S_05】"
+          rclone sync O:/"05 听读" S:/"05 听读" -v
+          echo "【O_05】已同步至【S_05】"
