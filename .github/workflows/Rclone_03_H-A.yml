@@ -77,5 +77,5 @@ jobs:
           # rclone sync $GCLONE_PATCH_05
           # echo "【H_05】已同步至【Auto】"
           
-          rclone sync Auto:{1rUj-JvWt9UVlURQAglh23OQ2g2hx7x8A} Auto:{1BU_wSgQOILOfjHtQlHrKfKY1YQkT5O5o} --drive-server-side-across-configs -v
+          rclone sync Auto:{1oufSExsqGXgMLJjXI9y6VeT3f0DKijwR} Auto:{1BU_wSgQOILOfjHtQlHrKfKY1YQkT5O5o} --drive-server-side-across-configs -v
           echo "已同步至【Auto】"
