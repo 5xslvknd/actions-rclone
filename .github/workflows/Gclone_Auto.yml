@@ -1,4 +1,4 @@
-name: Rclone_03 H sync to A
+name: Gclone to Auto
 
 on:
   workflow_dispatch:
@@ -10,13 +10,6 @@ jobs:
     env:
       GCLONE_CONFIG: ${{ secrets.GCLONE_CONFIG }}
       GCLONE_SA_DLURL: ${{ secrets.GCLONE_SA_DLURL }}
-      GCLONE_PATCH: ${{ secrets.GCLONE_PATCH }}
-      GCLONE_PATCH_01: ${{ secrets.GCLONE_PATCH_01 }}
-      GCLONE_PATCH_02: ${{ secrets.GCLONE_PATCH_02 }} 
-      GCLONE_PATCH_03: ${{ secrets.GCLONE_PATCH_03 }} 
-      GCLONE_PATCH_04: ${{ secrets.GCLONE_PATCH_04 }} 
-      GCLONE_PATCH_05: ${{ secrets.GCLONE_PATCH_05 }} 
-      GCLONE_PATCH_06: ${{ secrets.GCLONE_PATCH_06 }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -59,23 +52,5 @@ jobs:
           # 更改时区
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           # 开始同步
-          # rclone sync $GCLONE_PATCH_01
-          # echo "【H_01】已同步至【Auto】"
-          
-          # rclone sync $GCLONE_PATCH_02
-          # echo "【H_02】已同步至【Auto】"
-          
-          # rclone sync $GCLONE_PATCH_03
-          # echo "【H_03】已同步至【Auto】"
-          
-          # rclone sync $GCLONE_PATCH_06
-          # echo "【H_06】已同步至【Auto】"
-          
-          # rclone sync $GCLONE_PATCH_04
-          # echo "【H_04】已同步至【Auto】"
-          
-          # rclone sync $GCLONE_PATCH_05
-          # echo "【H_05】已同步至【Auto】"
-          
-          rclone sync Auto:{1oufSExsqGXgMLJjXI9y6VeT3f0DKijwR} Auto:{1BU_wSgQOILOfjHtQlHrKfKY1YQkT5O5o} --drive-server-side-across-configs -v
+          rclone sync Auto:{1V5Q1zTTyaMMEH4ZfaF6bjdWLjGAPYV2i} Auto:{17oLjTSBjrRp5PgRoCZNvKkXzOnqVsy3G} --drive-server-side-across-configs -v
           echo "已同步至【Auto】"
