@@ -2,8 +2,6 @@ name: Rclone_03 H sync to A
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 14 */2 * *
 
 jobs:
   build:
@@ -60,20 +58,23 @@ jobs:
           # 更改时区
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           # 开始同步
-          rclone sync $GCLONE_PATCH_01
-          echo "【H_01】已同步至【Auto】"
+          # rclone sync $GCLONE_PATCH_01
+          # echo "【H_01】已同步至【Auto】"
           
-          rclone sync $GCLONE_PATCH_02
-          echo "【H_02】已同步至【Auto】"
+          # rclone sync $GCLONE_PATCH_02
+          # echo "【H_02】已同步至【Auto】"
           
-          rclone sync $GCLONE_PATCH_03
-          echo "【H_03】已同步至【Auto】"
+          # rclone sync $GCLONE_PATCH_03
+          # echo "【H_03】已同步至【Auto】"
           
-          rclone sync $GCLONE_PATCH_06
-          echo "【H_06】已同步至【Auto】"
+          # rclone sync $GCLONE_PATCH_06
+          # echo "【H_06】已同步至【Auto】"
           
-          rclone sync $GCLONE_PATCH_04
-          echo "【H_04】已同步至【Auto】"
+          # rclone sync $GCLONE_PATCH_04
+          # echo "【H_04】已同步至【Auto】"
           
-          rclone sync $GCLONE_PATCH_05
-          echo "【H_05】已同步至【Auto】"
+          # rclone sync $GCLONE_PATCH_05
+          # echo "【H_05】已同步至【Auto】"
+          
+          rclone sync $GCLONE_PATCH
+          echo "已同步至【Auto】"
