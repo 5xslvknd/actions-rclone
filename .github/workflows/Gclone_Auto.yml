@@ -52,5 +52,5 @@ jobs:
           # 更改时区
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           # 开始同步
-          rclone sync Auto:{1_fRCdfaad3I24kr0QCwlfwlEcA-SY2jw} Auto:{17oLjTSBjrRp5PgRoCZNvKkXzOnqVsy3G} --drive-server-side-across-configs -v
+          rclone sync Auto:{1V5Q1zTTyaMMEH4ZfaF6bjdWLjGAPYV2i} Auto:{17oLjTSBjrRp5PgRoCZNvKkXzOnqVsy3G} --drive-server-side-across-configs -v
           echo "已同步至【Auto】"
