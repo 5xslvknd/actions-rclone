@@ -64,10 +64,10 @@ jobs:
           rclone sync P:/"06 UHD" H:/"06 UHD" -v
           echo "【P_06】已同步至【H_06】"
           
-          echo "开始同步【P_04】至【H_04】"
-          rclone sync P:/"04 感官" H:/"04 感官" -v
-          echo "【P_04】已同步至【H_04】"
+          # echo "开始同步【P_04】至【H_04】"
+          # rclone sync P:/"04 感官" H:/"04 感官" -v
+          # echo "【P_04】已同步至【H_04】"
           
-          echo "开始同步【P_05】至【H_05】"
-          rclone sync P:/"05 听读" H:/"05 听读" -v
-          echo "【P_05】已同步至【S_05】"
+          # echo "开始同步【P_05】至【H_05】"
+          # rclone sync P:/"05 听读" H:/"05 听读" -v
+          # echo "【P_05】已同步至【S_05】"
