@@ -53,11 +53,11 @@ jobs:
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           # 开始同步
           # O-A
-          # rclone sync Auto:{1U_azX4cqZZjqj7LsBsYhE9FyMetgjMJG} Auto:{17oLjTSBjrRp5PgRoCZNvKkXzOnqVsy3G} --drive-server-side-across-configs -v
+          # rclone sync Auto:{1eM982hvIjofzEql_f2dkp2GwBKSSwvn9} Auto:{1utJsXDe5GmY7WIIVONgPNLuxRljpv7j4} --drive-server-side-across-configs -v
           # echo "O已同步至【Auto】"
           # P-A
-          rclone sync Auto:{1_fRCdfaad3I24kr0QCwlfwlEcA-SY2jw} Auto:{17oLjTSBjrRp5PgRoCZNvKkXzOnqVsy3G} --drive-server-side-across-configs -v
-          echo "P已同步至【Auto】"
-          # H-A
-          # rclone sync Auto:{1V5Q1zTTyaMMEH4ZfaF6bjdWLjGAPYV2i} Auto:{17oLjTSBjrRp5PgRoCZNvKkXzOnqVsy3G} --drive-server-side-across-configs -v
+          # rclone sync Auto:{1eM982hvIjofzEql_f2dkp2GwBKSSwvn9} Auto:{1utJsXDe5GmY7WIIVONgPNLuxRljpv7j4} --drive-server-side-across-configs -v
           # echo "P已同步至【Auto】"
+          # H-A
+          rclone sync Auto:{1Fla8NmC9cgAygN4EHA-WcL4a5UuS3N-5} Auto:{1utJsXDe5GmY7WIIVONgPNLuxRljpv7j4} --drive-server-side-across-configs -v
+          echo "P已同步至【Auto】"
