@@ -23,6 +23,9 @@ client_id = XXX
 client_secret = XXX
 scope = drive
 token = {"access_token":"XXX","token_type":"Bearer","refresh_token":"XXX","expiry":"XXX"}
+team_drive = XXX
+service_account_file = /home/runner/accounts/XXXX.json
+service_account_file_path = /home/runner/accounts/
 
 [B]
 type = drive
