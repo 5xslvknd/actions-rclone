@@ -1,0 +1,60 @@
+name: Gclone
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+      GCLONE_CONFIG: ${{ secrets.GCLONE_CONFIG }}
+      GCLONE_SA_DLURL: ${{ secrets.GCLONE_SA_DLURL }}
+      GCLONE_PATCH: ${{ secrets.GCLONE_PATCH }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: gclone install
+        run: |
+          # 安装 gclone
+          wget -qO- https://api.github.com/repos/donwa/gclone/releases/latest \
+          | grep browser_download_url | grep Linux_x86_64 | cut -d '"' -f 4 \
+          | wget --no-verbose -i- -O- | gzip -d -c > rclone
+          sudo mv rclone /usr/bin
+          sudo chmod +x /usr/bin/rclone 
+      - name: set accounts
+        run: |
+          # 配置 accounts 文件
+          cd ~
+          wget -O sa.zip "$GCLONE_SA_DLURL"
+          unzip sa.zip
+      - name: gclone config
+        run: |
+          # 写配置文件
+          mkdir -p ~/.config/rclone/
+          cat >  ~/.config/rclone/rclone.conf  << EOF
+          $GCLONE_CONFIG
+          EOF
+      - name: gclone run
+        run: |
+          # 延迟函数
+          delay()
+          {
+          random_time=$(($RANDOM % $1))
+          echo "等待 ${random_time} 分钟后开始同步"
+          for((i=1;i<=${random_time};i++)); 
+          do
+          echo "倒计时 $[${random_time}-$i] 分钟"
+          sleep 1m
+          done
+          }
+          # 随机延迟0~15分钟后再进行操作,可自行设置时间
+          delay 1
+          # 更改时区
+          sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+          # 开始同步
+          rclone sync $GCLONE_PATCH --drive-server-side-across-configs -v
+          echo "已同步"
