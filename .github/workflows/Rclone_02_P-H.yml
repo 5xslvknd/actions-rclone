@@ -46,21 +46,21 @@ jobs:
           # 更改时区
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           
-          echo "开始同步【P_01】至【H_01】"
-          rclone sync P:/"01 电影" H:/"01 电影" -v
-          echo "【P_01】已同步至【H_01】"
+          # echo "开始同步【P_01】至【H_01】"
+          # rclone sync P:/"01 电影" H:/"01 电影" -v
+          # echo "【P_01】已同步至【H_01】"
           
-          echo "开始同步【P_02】至【H_02】"
-          rclone sync P:/"02 剧集" H:/"02 剧集" -v
-          echo "【P_02】已同步至【H_02】"
+          # echo "开始同步【P_02】至【H_02】"
+          # rclone sync P:/"02 剧集" H:/"02 剧集" -v
+          # echo "【P_02】已同步至【H_02】"
           
-          echo "开始同步【P_03】至【H_03】"
-          rclone sync P:/"03 音乐" H:/"03 音乐" -v
-          echo "【P_03】已同步至【H_03】"
+          # echo "开始同步【P_03】至【H_03】"
+          # rclone sync P:/"03 音乐" H:/"03 音乐" -v
+          # echo "【P_03】已同步至【H_03】"
           
-          echo "开始同步【P_06】至【H_06】"
-          rclone sync P:/"06 UHD" H:/"06 UHD" -v
-          echo "【P_06】已同步至【H_06】"
+          # echo "开始同步【P_06】至【H_06】"
+          # rclone sync P:/"06 UHD" H:/"06 UHD" -v
+          # echo "【P_06】已同步至【H_06】"
           
           echo "开始同步【P_04】至【H_04】"
           rclone sync P:/"04 感官" H:/"04 感官" -v
