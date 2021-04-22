@@ -48,7 +48,7 @@ jobs:
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           
           echo "开始同步【O_01】至【S_01】"
-          rclone sync O:/"00 中转"/0108 S:/"00 中转"/0108 -v
+          rclone sync O:/"00 中转"/"待归类" S:/"00 中转"/"待归类" -v
           echo "【O_01】已同步至【S_01】"
           
           # echo "开始同步【O_02】至【S_02】"
