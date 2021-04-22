@@ -64,7 +64,7 @@ jobs:
           # echo "【O_06】已同步至【S_06】"
           
           echo "开始同步【O_04】至【S_04】"
-          rclone sync O:/"04 感官" P:/"04 感官" -v
+          rclone sync O:/"04 感官" S:/"04 感官" -v
           echo "【O_04】已同步至【S_04】"
           
           # echo "开始同步【O_05】至【S_05】"
