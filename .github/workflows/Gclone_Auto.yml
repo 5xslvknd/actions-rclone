@@ -53,7 +53,7 @@ jobs:
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           # 开始同步
           # O-A
-          rclone sync Auto:{1fBGurXQlpAeqG2nWe2go_VCjE7EHp6yj} Auto:{1YRJAE-F74XlHCWrkpnvLxeFAfk-k-weP} --drive-server-side-across-configs -v
+          rclone sync Auto:{1mgVOY9QzeI2C2XzmrBCLSqCBBYdWASH9} Auto:{1F0u3PXK67aymVjtAxpnrRh5dZaUSnm0W} --drive-server-side-across-configs -v
           echo "O已同步至【Auto】"
           # P-A
           # rclone sync Auto:{1CLHe9QufGseWrlt3D42QmsKfWND1hdFB} Auto:{1psXoL-HFDdysZ8x3eVG6bv59UG8LTAwu} --drive-server-side-across-configs -v
