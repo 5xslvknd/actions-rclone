@@ -1,4 +1,4 @@
-name: Gclone to Auto
+name: gclone to auto
 
 on:
   workflow_dispatch:
