@@ -1,4 +1,4 @@
-name: Rclone_03 O Sync to S
+name: rclone to sfun
 
 on:
   workflow_dispatch:
