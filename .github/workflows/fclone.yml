@@ -30,7 +30,7 @@ jobs:
         run: |
           # 配置 accounts 文件
           cd ~
-          wget -O sa.zip "$GCLONE_SA_DLURL"
+          wget -qO- sa.zip "$GCLONE_SA_DLURL"
           unzip sa.zip
       - name: fclone config
         run: |
