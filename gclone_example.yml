@@ -1,4 +1,4 @@
-name: Gclone
+name: fclone
 
 on:
   workflow_dispatch:
