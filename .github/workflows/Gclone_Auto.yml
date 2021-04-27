@@ -25,7 +25,7 @@ jobs:
         run: |
           # 配置 accounts 文件
           cd ~
-          wget -O sa.zip "$GCLONE_SA_DLURL"
+          wget -q -O sa.zip "$GCLONE_SA_DLURL"
           unzip sa.zip
       - name: gclone config
         run: |
