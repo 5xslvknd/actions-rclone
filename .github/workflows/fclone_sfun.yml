@@ -55,5 +55,5 @@ jobs:
           # 更改时区
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           # 开始同步
-          fclone sync Auto:{1LyWgvu_WAYcRcgGG52mu-vlX9KdWU9qh} Auto:{1JJ_TsxFQpKI-qUFImrnaAs7wHkFmIJ79} --drive-server-side-across-configs -v
+          fclone sync Auto:{1ttX0S2w8rr6QF-e4xraplUTI57qaVDxG} Auto:{1epJ0sRXGyulGKKUkQw6PpFIUZ4itD5zB} --drive-server-side-across-configs -v
           echo "已同步"
