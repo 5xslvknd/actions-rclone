@@ -1,4 +1,4 @@
-name: Rclone_04 W sync to O
+name: rclone to auto
 
 on:
   workflow_dispatch:
