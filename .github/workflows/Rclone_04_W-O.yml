@@ -47,26 +47,26 @@ jobs:
           sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           
           echo "开始同步【A】"
-          rclone sync W:/A O:/"00 中转"/ACG/A
+          rclone sync W:/A Auto:/ACG/A -v
           echo "【A】已同步"
           echo "开始同步【B】"
-          rclone sync W:/B O:/"00 中转"/ACG/B
+          rclone sync W:/B Auto:/ACG/B -v
           echo "【B】已同步"
           echo "开始同步【C】"
-          rclone sync W:/C O:/"00 中转"/ACG/C
+          rclone sync W:/C Auto:/ACG/C -v
           echo "【C】已同步"
           echo "开始同步【D】"
-          rclone sync W:/D O:/"00 中转"/ACG/D
+          rclone sync W:/D Auto:/ACG/D -v
           echo "【D】已同步"
           echo "开始同步【E】"
-          rclone sync W:/E O:/"00 中转"/ACG/E
+          rclone sync W:/E Auto:/ACG/E -v
           echo "【E】已同步"
           echo "开始同步【F】"
-          rclone sync W:/F O:/"00 中转"/ACG/F
+          rclone sync W:/F Auto:/ACG/F -v
           echo "【F】已同步"
           echo "开始同步【G】"
-          rclone sync W:/G O:/"00 中转"/ACG/G
+          rclone sync W:/G Auto:/ACG/G -v
           echo "【G】已同步"
           echo "开始同步【H】"
-          rclone sync W:/H O:/"00 中转"/ACG/H -v
+          rclone sync W:/H Auto:/ACG/H -v
           echo "【H】已同步"
