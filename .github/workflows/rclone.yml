@@ -1,0 +1,69 @@
+name: rclone
+
+on:
+  schedule:
+    - cron: '1 16 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: rclone-install
+        run: |
+          # 安装 rclone
+          curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip
+          unzip rclone-current-linux-amd64.zip
+          cd rclone-*-linux-amd64
+          sudo mv rclone /usr/bin
+          sudo chmod +x /usr/bin/rclone
+      - name: rclone-config
+        env:
+          RCLONE_CONFIG: ${{ secrets.RCLONE_CONFIG }}
+        run: |
+          # 写配置文件
+          mkdir -p ~/.config/rclone/
+          cat << EOF > ~/.config/rclone/rclone.conf
+          $RCLONE_CONFIG
+          EOF
+      - name: rclone-run
+        run: |
+          # Rclone-Run
+ 
+          # 更改时区
+          sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+          
+          echo "【】开始同步【】"
+          curl -s -X POST ${{ secrets.TG }} text="github rclone 任务执行开始"
+          
+          rclone sync o:my/j j: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my/j j: 任务执行结束"
+          rclone sync o:my/k k: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my/k k: 任务执行结束"
+          rclone sync o:1024 1024: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:1024 1024: 任务执行结束"
+          rclone sync o:my/av1 av1: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my/av1 av1: 任务执行结束"
+          rclone sync o:my/av2 av2: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my/av2 av2: 任务执行结束"
+          
+          rclone sync yj: o:my/远鉴 --drive-server-side-across-configs --drive-stop-on-upload-limit
+          curl -s -X POST ${{ secrets.TG }} text="github rclone yj: o:my/远鉴 任务执行结束"
+          rclone sync o:my p:my --drive-server-side-across-configs --drive-stop-on-upload-limit
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my p:my 任务执行结束"
+          rclone sync o:my q:my --drive-server-side-across-configs --drive-stop-on-upload-limit
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my q:my 任务执行结束"
+          rclone sync o:1024 s:1024 --drive-server-side-across-configs --drive-stop-on-upload-limit
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:1024 s:1024 任务执行结束"
+          rclone sync o:1024 t:1024 --drive-server-side-across-configs --drive-stop-on-upload-limit
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:1024 t:1024 任务执行结束"
+          rclone sync o:1024 huayuworld:1024 --drive-server-side-across-configs --drive-stop-on-upload-limit
+          curl -s -X POST ${{ secrets.TG }} text="github rclone o:1024 huayuworld:1024 任务执行结束"
+
+          echo "【】已同步【】"
+          curl -s -X POST ${{ secrets.TG }} text="github rclone 任务执行结束"
