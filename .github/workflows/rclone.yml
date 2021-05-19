@@ -41,12 +41,6 @@ jobs:
           echo "【】开始同步【】"
           curl -s -X POST ${{ secrets.TG }} text="github rclone 任务执行开始"
           
-          rclone sync o:my/j j: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
-          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my/j j: 任务执行结束"
-          rclone sync o:my/k k: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
-          curl -s -X POST ${{ secrets.TG }} text="github rclone o:my/k k: 任务执行结束"
-          rclone sync o:1024 1024: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
-          curl -s -X POST ${{ secrets.TG }} text="github rclone o:1024 1024: 任务执行结束"
           rclone sync o:my/av1 av1: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
           curl -s -X POST ${{ secrets.TG }} text="github rclone o:my/av1 av1: 任务执行结束"
           rclone sync o:my/av2 av2: --drive-server-side-across-configs --drive-stop-on-upload-limit --checkers=10 --transfers=10 --onedrive-chunk-size=250M -vv
